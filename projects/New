@@ -1,0 +1,15 @@
+{
+  "name": "(gdb) Launch",
+  "type": "cppdbg",
+  "request": "launch",
+  "program": "${workspaceFolder}/helloworld",
+  "stopAtEntry": true,
+  "customLaunchSetupCommands": [
+    { "text": "target-run", "description": "run target", "ignoreFailures": false }
+  ],
+  "launchCompleteCommand": "exec-run",
+  "linux": {
+    "MIMode": "gdb",
+    "miDebuggerPath": "/usr/bin/gdb"
+  }
+}
