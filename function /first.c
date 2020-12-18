@@ -1,3 +1,6 @@
+#include <math.h>
+#include <stdio.h>
+
 int gcd (unsigned int a, unsigned int b){
     int gcdNum = 0;
     if ( a > b){
@@ -35,8 +38,8 @@ float absoluteValue(float a){
         return a;   
 };
 
-int add(int a, int b){
-    return a + b;
+int squareroot(int a){
+    return sqrt(a);
 };
 
 int main (){
@@ -50,6 +53,10 @@ int main (){
     float d;
     scanf("%f", &d);
     printf("%.2f", absoluteValue(d));
+    printf("\npleas input the num you want to know the square root:");
+    int f;
+    scanf("%i", &f);
+    printf("The square root is:%i", squareroot(f));
     
     return 0;
 }
