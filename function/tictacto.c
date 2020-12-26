@@ -57,14 +57,17 @@ int main(){
             player = 2;
         else
             player = 1;
-        printf("you played %i rounds", gamesRound);
-        if(game == false || gamesRound == 8){
+        printf("you played %i rounds\n", gamesRound);
+        if(game == false || gamesRound == 9){
+            if(gamesRound == 9)
+                printf("No body won this game\n");
             printf("Player %i do you want to play again?\n if yes press 1 otherwise press 2\n", player);
             scanf("%i", &playagain);
             if(playagain == 1){
                 for(int i = 1; i<= 9; i++){
                     board[i] = i+'0';
                 };
+                gamesRound = 1;
                 game = true;
             }
         };
