@@ -13,26 +13,31 @@ int main(){
     //char secTemp[11];
     char inputKey[11];
     char ext[2];
-    char k1[7], k2[7];
+    char k2[9];
+    char k1[9];
+    temp[10]='\0';
+    k1[8] = '\0';
+    
+    
     
     
     
     //get the inputKey from user
     printf("Please enter 10 bits of input:");
     scanf("%s", &inputKey); 
-    inputKey[11] = '\0';
-    printf("your input was: %s\n",inputKey);
+    inputKey[10] = '\0';
+    printf("input: %s\n",inputKey);
 
     //starting to build k1
     //applying p1
     for(i=0 ; i<=9; ++i){
         temp[i] = inputKey[p1[i] - 1];
     };
-    temp[11] = '\0';
+    temp[10] = '\0';
     //strncpy(secTemp, temp, 11);
     //secTemp[10] = '\0';
-    printf("the input after applying p1: %s\n", temp);
-
+    printf("P1: %s\n", temp);
+    printf("len: %i\n",  strlen(temp));
     //LS-1
     //first half
     for(i=0; i<5; ++i){
@@ -61,10 +66,10 @@ int main(){
 
     };
 
-    printf("Output after LS-1: ");
+    printf("LS-1: ");
     puts(temp);
 
-    printf("Our P8 is: ");
+    printf("P8: ");
     for (i = 0; i<8;++i) {
         if(i==7)
             printf("%d\n",p8[i]);
@@ -78,14 +83,14 @@ int main(){
         k1[i] = temp[n-1];
     };
 
-    printf("\nYour key k1 is:  ");
+    printf("k1: ");
     puts(k1);
 
     //for (i = 0; i<8; ++i) {
     //    n = p8[0];
     //    k1[i] = temp[n - 1];
     //};
-    //printf("The k1 result is: ");
+    //printf("The k1 result: ");
 
     //Performing LS2
     for(i=0; i<5; ++i){
@@ -124,10 +129,19 @@ int main(){
         }  
 
     };
+    
+   
 
-    printf("Output after LS-2: ");
-    puts(temp);
-
+    printf("LS-2: %s\n", temp);
+    printf("len: %i\n",  strlen(temp));
+    
+    for (i=0; i<8; ++i) {
+        n = p8[i];
+        k2[i] = temp[n-1];  
+    };
+    k2[8] = '\0';
+    printf("k2: ");
+    puts(k2);
     //8 bit input
     //printf("Please enter 8 bit of a binary inputKey: ")
     //scanf("%i")
