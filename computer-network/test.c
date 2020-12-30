@@ -34,8 +34,7 @@ int main(){
         temp[i] = inputKey[p1[i] - 1];
     };
     temp[10] = '\0';
-    //strncpy(secTemp, temp, 11);
-    //secTemp[10] = '\0';
+ 
     printf("P1: %s\n", temp);
     printf("len: %i\n",  strlen(temp));
     //LS-1
@@ -142,9 +141,6 @@ int main(){
     k2[8] = '\0';
     printf("k2: ");
     puts(k2);
-    //8 bit input
-    //printf("Please enter 8 bit of a binary inputKey: ")
-    //scanf("%i")
-
+    
 };
 
