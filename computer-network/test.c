@@ -1,32 +1,36 @@
+/* 
+
+    Approach to Simplified Data Encryption Standard (S-DES)
+    Fallowed the instruction by Prof. William Stallings
+    You find the pdf of it here:
+    http://mercury.webster.edu/aleshunas/COSC%205130/G-SDES.pdf
+
+*/
 
 #include <stdio.h>
 
+//initializing the variables
 
+
+int p8[] = {6, 3, 7, 4, 8, 5, 10, 9};   //
+int p1[] = {3, 5, 2, 7, 4, 10, 1, 9, 8, 6};
+int n = 0;
+int i;  //use for for loops
+char inputKey[11];  //The variable for storing the 10 bit input key from the user
+char temp[11];      
+
+char ext[2];
+char k1[9];  //first 8 bit key - I added a null at the end of the key
+char k2[9];  //second 8 bit key
+    
 int main(){
 
-    //initializing the variables
-    int p8[] = {6, 3, 7, 4, 8, 5, 10, 9};
-    int p1[] = {3, 5, 2, 7, 4, 10, 1, 9, 8, 6};
-    int n = 0;
-    int i;
-    char temp[11];
-    //char secTemp[11];
-    char inputKey[11];
-    char ext[2];
-    char k2[9];
-    char k1[9];
-    temp[10]='\0';
-    k1[8] = '\0';
-    
-    
-    
-    
-    
     //get the inputKey from user
     printf("Please enter 10 bits of input:");
     scanf("%s", &inputKey); 
     inputKey[10] = '\0';
-    printf("input: %s\n",inputKey);
+    printf("input: ");
+    puts(inputKey);
 
     //starting to build k1
     //applying p1
@@ -34,8 +38,9 @@ int main(){
         temp[i] = inputKey[p1[i] - 1];
     };
     temp[10] = '\0';
- 
-    printf("P1: %s\n", temp);
+   
+    printf("P1: ");
+    puts(temp);
     printf("len: %i\n",  strlen(temp));
     //LS-1
     //first half
@@ -81,7 +86,7 @@ int main(){
         n = p8[i];
         k1[i] = temp[n-1];
     };
-
+    k1[8] = '\0';
     printf("k1: ");
     puts(k1);
 
